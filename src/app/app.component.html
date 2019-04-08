@@ -1,0 +1,159 @@
+<div class=" bg-dark">
+  <div class="container">
+      <br>
+      <h1 class="text-white">Formulário Social</h1>
+      <p class="text-white"> Preencha os dados corretamente pois nao terminei ainda rsrsrsrs ainda esta em desenvolvimento !! Obg </p>
+      <br>
+  </div>
+  
+</div>
+<div class="container">
+  <br>
+  <form #cadastro="ngForm" (submit)="salvar()">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" [(ngModel)]="nome" class="form-control" required>
+      <small class="form-text text-muted">Coloque seu nome completo.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="sexo">Sexo:</label>
+      <br>
+      <div class="form-check form-check-inline">
+        <input type="radio" value="Masculino" id="sexo" name="sexo" [(ngModel)]="sexo" class="form-check-input">
+        <label class="form-check-label" for="sexo">Masculino</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input type="radio" value="Feminino" id="sexo" name="sexo" [(ngModel)]="sexo" class="form-check-input">
+        <label class="form-check-label" for="sexo">Feminino</label>
+      </div>
+      
+    </div>
+    <div class="form-group">
+      <label for="idade">Idade:</label>
+      <input type="number" id="idade" name="idade" [(ngModel)]="idade" class="form-control">
+      <small class="form-text text-muted">Insira sua idade.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="cidade">Cidade</label>
+      <select class="form-control" id="cidade" name="cidade" [(ngModel)]="cidade">
+        <option value="null">------</option>
+        <option value="Palmas">Palmas</option>
+        <option value="Lajeado">Lajeado</option>
+        <option value="Porto Nacional">Porto Nacional</option>
+        <option value="Paraíso">Paraíso</option>
+        <option value="Barrolândia">Barrolândia</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-outline-secondary" [disabled]="!cadastro.form.valid"><i class="fa fa-save"> Salvar</i></button>
+      <button type="reset" class="btn btn-outline-danger" formnovalidate> Limpar</button>
+    </div>
+  </form>
+  <br><hr/><br>
+  <h2>Estatísticas</h2>
+  <br>
+  <table class="table table-bordered table-striped">
+      <tbody>
+        <tr>
+          <td>Pessoa mais velha</td>
+          <td>{{nome_pessoa_mais_velha}}</td>
+        </tr>
+        <tr>
+          <td>Pessoa mais nova</td>
+          <td>{{nome_pessoa_mais_nova}}</td>
+        </tr>
+        <tr>
+          <td>Média de idade de Mulheres</td>
+          <td>{{media_idade_mulheres}}</td>
+        </tr>
+        <tr>
+          <td>Média idade de Homens</td>
+          <td>{{media_idade_homens}}</td>
+        </tr>
+      </tbody>
+    </table>
+  <br>
+  
+  <table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th colspan="2" style="text-align:center">Média de idade por cidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Palmas</td>
+        <td>{{media_idade_palmas}}</td>
+      </tr>
+      <tr>
+        <td>Lajeado</td>
+        <td>{{media_idade_lajeado}}</td>
+      </tr>
+      <tr>
+        <td>Porto Nacional</td>
+        <td>{{media_idade_porto}}</td>
+      </tr>
+      <tr>
+      <td>Paraíso</td>
+      <td>{{media_idade_paraiso}}</td>
+      </tr>
+
+      <tr>
+      <td>Barrolândia</td>
+      <td>{{media_idade_barrolandia}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  <br>
+
+  <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th colspan="3" style="text-align:center">Porcentagem de pessos por sexo nas Cidade</th>
+        </tr>
+      </thead>
+      <thead class="bg-primary">
+          <tr>
+            <th style="color:white">Cidade</th>
+            <th style="color:white">% Fem</th>
+            <th style="color:white">% Mas</th>
+            </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Palmas</td>
+          <td>{{porcentagem_mulher_palmas}}</td>
+          <td>{{porcentagem_homem_palmas}}</td>
+        </tr>
+        <tr>
+          <td>Lajeado</td>
+          <td>{{porcentagem_mulher_lajeado}}</td>
+          <td>{{porcentagem_homem_lajeado}}</td>
+        </tr>
+        <tr>
+          <td>Porto Nacional</td>
+          <td>{{porcentagem_mulher_porto}}</td>
+          <td>{{porcentagem_homem_porto}}</td>
+        </tr>
+        <tr>
+          <td>Paraíso</td>
+          <td>{{porcentagem_mulher_paraiso}}</td>
+          <td>{{porcentagem_homem_paraiso}}</td>
+        </tr>
+        <tr>
+          <td>Barrolândia</td>
+          <td>{{porcentagem_mulher_barrolandia}}</td>
+          <td>{{porcentagem_homem_barrolandia}}</td>
+        </tr>
+  
+      </tbody>
+    </table>
+
+    <!-- FOOTER -->
+    <hr>
+
+</div>
+
